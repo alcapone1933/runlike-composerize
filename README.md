@@ -1,11 +1,9 @@
 # runlike-composerize
 
-
-
 ### FORK
-### Docker runlike the original is from Gitithub
-### runlike     https://github.com/lavie/runlike
-### composerize https://github.com/magicmark/composerize
+### The original is from Gitithub
+### runlike: https://github.com/lavie/runlike
+### composerize: https://github.com/magicmark/composerize
 
 &nbsp;
 
