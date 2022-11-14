@@ -74,7 +74,6 @@ steps:
       auto_tag: true
       auto_tag_suffix: composerize
       dockerfile: Dockerfile.composerize
-
   - name: Build Multi-arch runlike
     image: alcapone1933/drone:docker-buildx
     privileged: true
