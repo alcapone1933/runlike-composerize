@@ -1,8 +1,8 @@
 # runlike-composerize
 
-## Runlike: "Output containers to docker run commands" 
+### Runlike: "Output containers to docker run commands" 
 
-## Composerize: "docker run commands to docker-compose"
+### Composerize: "docker run commands to docker-compose"
 
 
 ### FORK
