@@ -1,0 +1,102 @@
+---
+kind: pipeline
+type: docker
+name: BUILD TEST
+
+steps:
+#  - name: Build Multi-arch runlike-composerize
+#    image: alcapone1933/drone:docker-buildx
+#    privileged: true
+#    settings:
+#      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+#      repo: alcapone1933/runlike-composerize
+#      tags: latest
+#      dockerfile: Dockerfile
+#      dry_run: true
+  - name: Build Multi-arch composerize
+    image: alcapone1933/drone:docker-buildx
+    privileged: true
+    settings:
+      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      repo: alcapone1933/runlike-composerize
+      tags: composerize
+      dockerfile: Dockerfile.composerize
+      dry_run: true
+  - name: Build Multi-arch runlike
+    image: alcapone1933/drone:docker-buildx
+    privileged: true
+    settings:
+      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      repo: alcapone1933/runlike-composerize
+      tags: runlike
+      dockerfile: Dockerfile.runlike
+      dry_run: true
+
+trigger:
+  branch:
+  - master
+  event:
+  - custom
+  - push
+  - pull_request
+
+---
+kind: pipeline
+type: docker
+name: BUILD Dockerhub
+
+steps:
+#  - name: Build Multi-arch runlike-composerize
+#    image: alcapone1933/drone:docker-buildx
+#    privileged: true
+#    settings:
+#      username:
+#        from_secret: DOCKER_USER
+#      password: 
+#        from_secret: DOCKER_PASS
+#      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+#      repo: alcapone1933/runlike-composerize
+#      # tags: latest
+#      auto_tag: true
+#      auto_tag_suffix: latest
+#      dockerfile: Dockerfile
+  - name: Build Multi-arch composerize
+    image: alcapone1933/drone:docker-buildx
+    privileged: true
+    settings:
+      username:
+        from_secret: DOCKER_USER
+      password: 
+        from_secret: DOCKER_PASS
+      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      repo: alcapone1933/runlike-composerize
+      # tags: composerize
+      auto_tag: true
+      auto_tag_suffix: composerize
+      dockerfile: Dockerfile.composerize
+
+  - name: Build Multi-arch runlike
+    image: alcapone1933/drone:docker-buildx
+    privileged: true
+    settings:
+      username:
+        from_secret: DOCKER_USER
+      password: 
+        from_secret: DOCKER_PASS
+      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      repo: alcapone1933/runlike-composerize
+      # tags: runlike
+      auto_tag: true
+      auto_tag_suffix: runlike
+      dockerfile: Dockerfile.runlike
+
+trigger:
+  branch:
+  - master
+  event:
+  - custom
+  # - push
+  # - pull_request
+
+depends_on:
+  - BUILD TEST
