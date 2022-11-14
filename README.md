@@ -1,5 +1,9 @@
 # runlike-composerize
 
+[![Build Status](https://shields.cosanostra-cloud.de/drone/build/alcapone1933/runlike-composerize?logo=drone&server=https%3A%2F%2Fdrone.docker-for-life.de)](https://drone.docker-for-life.de/alcapone1933/runlike-composerize)
+[![Build Status Branch Master](https://shields.cosanostra-cloud.de/drone/build/alcapone1933/runlike-composerize/master?logo=drone&label=build%20%5Bbranch%20master%5D&server=https%3A%2F%2Fdrone.docker-for-life.de)](https://drone.docker-for-life.de/alcapone1933/runlike-composerize/branches)
+[![Docker Pulls](https://shields.cosanostra-cloud.de/docker/pulls/alcapone1933/runlike-composerize?logo=docker&logoColor=blue)](https://hub.docker.com/r/alcapone1933/runlike-composerize/tags)
+
 ### Runlike: "Output containers to docker run commands" 
 
 ### Composerize: "docker run commands to docker-compose"
