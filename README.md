@@ -1,5 +1,10 @@
 # runlike-composerize
 
+## Runlike: "Output containers to docker run commands" 
+
+## Composerize: "docker run commands to docker-compose"
+
+
 ### FORK
 ### The original is from Gitithub
 ### runlike: https://github.com/lavie/runlike
