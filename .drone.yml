@@ -88,6 +88,30 @@ steps:
       auto_tag: true
       auto_tag_suffix: runlike
       dockerfile: Dockerfile.runlike
+  - name: Build Multi-arch composerize
+    image: alcapone1933/drone:docker-buildx
+    privileged: true
+    settings:
+      username:
+        from_secret: DOCKER_USER
+      password: 
+        from_secret: DOCKER_PASS
+      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      repo: alcapone1933/runlike
+      tags: composerize
+      dockerfile: Dockerfile.composerize
+  - name: Build Multi-arch composerize
+    image: alcapone1933/drone:docker-buildx
+    privileged: true
+    settings:
+      username:
+        from_secret: DOCKER_USER
+      password: 
+        from_secret: DOCKER_PASS
+      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      repo: alcapone1933/composerize
+      tags: cli
+      dockerfile: Dockerfile.composerize
 
 trigger:
   branch:
