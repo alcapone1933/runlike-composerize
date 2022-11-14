@@ -88,7 +88,7 @@ steps:
       auto_tag: true
       auto_tag_suffix: runlike
       dockerfile: Dockerfile.runlike
-  - name: Build Multi-arch composerize
+  - name: Build Multi-arch runlike composerize 
     image: alcapone1933/drone:docker-buildx
     privileged: true
     settings:
@@ -100,7 +100,7 @@ steps:
       repo: alcapone1933/runlike
       tags: composerize
       dockerfile: Dockerfile.composerize
-  - name: Build Multi-arch composerize
+  - name: Build Multi-arch composerize Cli
     image: alcapone1933/drone:docker-buildx
     privileged: true
     settings:
