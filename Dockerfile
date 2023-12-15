@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM node:16-alpine3.18
 LABEL maintainer="alcapone1933 <alcapone1933@cosanostra-cloud.de>" \
       org.opencontainers.image.created="$(date +%Y-%m-%d\ %H:%M)" \
       org.opencontainers.image.authors="alcapone1933 <alcapone1933@cosanostra-cloud.de>" \
@@ -8,11 +8,10 @@ LABEL maintainer="alcapone1933 <alcapone1933@cosanostra-cloud.de>" \
       org.opencontainers.image.title="runlike-composerize" \
       org.opencontainers.image.description="Runlike and Composerize:  Output containers to docker-compose"
 
-RUN apk add --update --no-cache python3 curl docker npm && \
+RUN apk add --update --no-cache python3 py3-pip curl docker npm && \
     rm -rf /var/cache/apk/* && \
-    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
-    python3 get-pip.py && \
-    pip install runlike && \
+    pip3 install --break-system-packages runlike && \
     npm install composerize -g
+
 # ENTRYPOINT ["composerize"]
 # ENTRYPOINT ["runlike"]

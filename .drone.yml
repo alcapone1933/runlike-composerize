@@ -8,7 +8,7 @@ steps:
     image: alcapone1933/drone:docker-buildx
     privileged: true
     settings:
-      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
       repo: alcapone1933/runlike-composerize
       tags: latest
       dockerfile: Dockerfile
@@ -17,7 +17,7 @@ steps:
     image: alcapone1933/drone:docker-buildx
     privileged: true
     settings:
-      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
       repo: alcapone1933/runlike-composerize
       tags: composerize
       dockerfile: Dockerfile.composerize
@@ -54,7 +54,7 @@ steps:
         from_secret: DOCKER_USER
       password: 
         from_secret: DOCKER_PASS
-      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
       repo: alcapone1933/runlike-composerize
       # tags: latest
       auto_tag: true
@@ -68,7 +68,7 @@ steps:
         from_secret: DOCKER_USER
       password: 
         from_secret: DOCKER_PASS
-      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
       repo: alcapone1933/runlike-composerize
       # tags: composerize
       auto_tag: true
@@ -108,7 +108,7 @@ steps:
         from_secret: DOCKER_USER
       password: 
         from_secret: DOCKER_PASS
-      platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
+      platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
       repo: alcapone1933/composerize
       tags: cli
       dockerfile: Dockerfile.composerize
