@@ -12,7 +12,7 @@
 ### FORK
 ### The original is from Gitithub
 ### runlike: https://github.com/lavie/runlike
-### composerize: https://github.com/magicmark/composerize
+### composerize: https://github.com/composerize/composerize
 
 &nbsp;
 
@@ -41,7 +41,7 @@ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alcapone1933/runlik
 ### Example
 
 ```bash
-$ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alcapone1933/runlike-composerize:runlike portianer
+$ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alcapone1933/runlike-composerize:runlike portainer
 
 # Output
 
@@ -66,7 +66,7 @@ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alcapone1933/runlik
 ### Example
 
 ```bash
-$ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alcapone1933/runlike-composerize:runlike -p portianer
+$ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alcapone1933/runlike-composerize:runlike -p portainer
 
 # Output
 
